@@ -1,0 +1,9 @@
+# Console d'administration — outil LOCAL, ne doit pas être mis en ligne
+admin.html
+Ouvrir-la-Console.bat
+
+# Fichiers système / OneDrive
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
