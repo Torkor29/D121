@@ -1,6 +1,7 @@
 # Console d'administration — outil LOCAL, ne doit pas être mis en ligne
 admin.html
-Ouvrir-la-Console.bat
+# Lanceurs locaux (.bat) — ne pas déployer
+*.bat
 
 # Fichiers système / OneDrive
 .DS_Store
