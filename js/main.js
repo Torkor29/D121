@@ -109,7 +109,7 @@
   /* ============================================================
      Formulaire de contact — envoi via Web3Forms (vers Gmail)
      1. Créez une clé gratuite sur https://web3forms.com
-        avec l'adresse d121.revetement@gmail.com
+        avec l'adresse contact@d121.fr
      2. Remplacez VOTRE_CLE_WEB3FORMS ci-dessous par la clé reçue.
      ============================================================ */
   var WEB3FORMS_KEY = 'd95608ae-9184-4811-bbe5-9b4b5471ba61';
@@ -158,7 +158,7 @@
         'Prestation : ' + form.subject.value + '\n\n' +
         'Message :\n' + form.message.value
       );
-      window.location.href = 'mailto:d121.revetement@gmail.com?subject=' + sujet + '&body=' + corps;
+      window.location.href = 'mailto:contact@d121.fr?subject=' + sujet + '&body=' + corps;
       show('ok', 'Votre logiciel de messagerie va s’ouvrir avec votre demande pré-remplie. Il ne reste qu’à cliquer sur « Envoyer ».');
       return;
     }
