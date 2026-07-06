@@ -107,12 +107,9 @@
   }
 
   /* ============================================================
-     Formulaire de contact — envoi via Web3Forms (vers Gmail)
-     1. Créez une clé gratuite sur https://web3forms.com
-        avec l'adresse contact@d121.fr
-     2. Remplacez VOTRE_CLE_WEB3FORMS ci-dessous par la clé reçue.
+     Formulaire de contact — envoi via Web3Forms (vers contact@d121.fr)
      ============================================================ */
-  var WEB3FORMS_KEY = 'd95608ae-9184-4811-bbe5-9b4b5471ba61';
+  var WEB3FORMS_KEY = 'c6ed545d-b2fa-4aaa-8b96-2e3c68570ea1';
 
   var form = document.getElementById('contact-form');
   if (!form) return;
