@@ -101,7 +101,7 @@ Dans `politique-confidentialite.html` :
 | | À quoi ça sert | Coût |
 |---|---|---|
 | **Hébergement** (Render, Netlify…) | Stocke les fichiers et sert le site sur Internet | Gratuit pour un site statique |
-| **Nom de domaine** (`d121-revetements.fr`) | L'adresse « jolie » que tapent les clients | ~7–12 €/an chez un registrar |
+| **Nom de domaine** (`d121.fr`) | L'adresse « jolie » que tapent les clients | ~7–12 €/an chez un registrar |
 
 👉 **Render n'a rien à voir avec le nom de domaine.** Render héberge ; le domaine s'achète
 séparément (OVH, Gandi, Ionos…), puis on **relie** les deux.
@@ -110,7 +110,7 @@ séparément (OVH, Gandi, Ionos…), puis on **relie** les deux.
 1. Créez un compte sur https://render.com
 2. **New +** → **Static Site** → connectez le dossier `site` (via un dépôt GitHub, ou glisser-déposer selon l'offre)
 3. Render publie sur une adresse gratuite type `d121.onrender.com` (HTTPS inclus)
-4. Pour un vrai nom de domaine : Render → onglet **Custom Domains** → ajoutez `d121-revetements.fr`,
+4. Pour un vrai nom de domaine : Render → onglet **Custom Domains** → ajoutez `d121.fr`,
    puis chez votre registrar, créez les enregistrements DNS indiqués par Render (un **CNAME** / **A**).
    Render fournit le certificat HTTPS automatiquement.
 
@@ -124,11 +124,11 @@ séparément (OVH, Gandi, Ionos…), puis on **relie** les deux.
 
 ### Acheter le nom de domaine
 - Registrar conseillé (français, `.fr` facile) : **OVHcloud** ou **Gandi**.
-- Cherchez la disponibilité de `d121-revetements.fr` (ou `.com`), achetez (~10 €/an), puis suivez
+- Cherchez la disponibilité de `d121.fr` (ou `.com`), achetez (~10 €/an), puis suivez
   les instructions DNS de votre hébergeur (Render/Netlify) pour le relier.
 
 > 💡 Avec un nom de domaine, vous pourrez aussi avoir un **email pro** type
-> `contact@d121-revetements.fr` (option payante chez le registrar). Le Gmail actuel suffit pour démarrer.
+> `contact@d121.fr` (option payante chez le registrar). Le Gmail actuel suffit pour démarrer.
 
 ---
 
@@ -196,9 +196,9 @@ Le site est optimisé pour le référencement (balises complètes, données stru
   comme demandé — seule la ville Brest / 29200 est déclarée.
 
 ### ⚠️ À FAIRE de votre côté (2 actions à fort impact)
-1. **Remplacer le domaine** : tout le SEO utilise `https://www.d121-revetements.fr`.
+1. **Remplacer le domaine** : tout le SEO utilise `https://d121.fr`.
    Si votre domaine final est différent, faites un **Rechercher/Remplacer** de
-   `https://www.d121-revetements.fr` dans **tous** les fichiers `.html`, `robots.txt` et `sitemap.xml`.
+   `https://d121.fr` dans **tous** les fichiers `.html`, `robots.txt` et `sitemap.xml`.
 2. **Créer une fiche Google Business Profile** (gratuit) sur https://business.google.com →
    c'est **LE levier n°1** pour un artisan local : apparaître sur Google Maps et dans le bloc local
    pour « revêtement sol Brest ». Utilisez les mêmes nom, téléphone, horaires et zone que le site.

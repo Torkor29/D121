@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.d121-revetements.fr/sitemap.xml
+Sitemap: https://d121.fr/sitemap.xml
