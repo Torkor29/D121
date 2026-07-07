@@ -346,6 +346,18 @@ p { color: var(--muted); }
 .zone-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: 40px; align-items: center; }
 @media (max-width: 860px){ .zone-grid { grid-template-columns: 1fr; gap: 26px; } #map { height: 340px; } }
 
+/* Communes desservies (page Zones d'intervention) */
+.commune-grid { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.commune-grid li {
+  padding: 18px 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-sm);
+  background: var(--bg-card); box-shadow: var(--shadow-sm);
+}
+.commune-grid h3 { font-size: 1.05rem; margin-bottom: 6px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.commune-grid .cp { color: var(--terracotta); font-weight: 700; font-size: .8rem; letter-spacing: .02em; }
+.commune-grid p { font-size: .9rem; margin: 0; }
+@media (max-width: 960px){ .commune-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px){ .commune-grid { grid-template-columns: 1fr; } }
+
 /* Bouton Google */
 .btn--google { background: #fff; color: var(--navy); border: 1.5px solid var(--line); }
 .btn--google:hover { border-color: var(--navy); transform: translateY(-2px); box-shadow: var(--shadow-sm); }

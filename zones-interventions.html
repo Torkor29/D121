@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zones d'intervention — Revêtement de sol à Brest et alentours | D121</title>
-  <meta name="description" content="D121 pose vos revêtements de sols souples à Brest et dans toute son agglomération : Bohars, Guilers, Gouesnou, Guipavas, Plouzané, Le Relecq-Kerhuon, Plougastel-Daoulas. Devis gratuit." />
-  <meta name="keywords" content="revêtement de sol Brest, poseur sol Guipavas, sol PVC Plouzané, sol Le Relecq-Kerhuon, revêtement sol Bohars, poseur sol Gouesnou, sol Plougastel-Daoulas, sol Guilers" />
+  <meta name="description" content="Où intervient D121 ? À Brest et dans toute son agglomération : Bohars, Guilers, Gouesnou, Guipavas, Plouzané, Le Relecq-Kerhuon, Plougastel-Daoulas. Carte, communes desservies et devis gratuit." />
+  <meta name="keywords" content="revêtement de sol Brest, zone d'intervention D121, poseur sol Guipavas, sol Plouzané, sol Le Relecq-Kerhuon, sol Bohars, sol Gouesnou, sol Plougastel-Daoulas, sol Guilers" />
   <meta name="author" content="D121 — Revêtements de sol" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://d121.fr/zones-interventions.html" />
@@ -20,7 +20,7 @@
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:url" content="https://d121.fr/zones-interventions.html" />
   <meta property="og:title" content="Zones d'intervention — Revêtement de sol à Brest et alentours | D121" />
-  <meta property="og:description" content="Pose de revêtements de sols souples à Brest et son agglomération : Bohars, Guilers, Gouesnou, Guipavas, Plouzané, Le Relecq-Kerhuon, Plougastel-Daoulas." />
+  <meta property="og:description" content="À Brest et dans son agglomération : Bohars, Guilers, Gouesnou, Guipavas, Plouzané, Le Relecq-Kerhuon, Plougastel-Daoulas." />
   <meta property="og:image" content="https://d121.fr/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -28,7 +28,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Zones d'intervention — D121 Revêtements de sol à Brest" />
-  <meta name="twitter:description" content="Pose de sols souples à Brest et son agglomération. Devis gratuit." />
+  <meta name="twitter:description" content="À Brest et dans son agglomération. Carte des communes desservies et devis gratuit." />
   <meta name="twitter:image" content="https://d121.fr/assets/og-image.jpg" />
 
   <meta name="theme-color" content="#213a5c" />
@@ -42,6 +42,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Carte interactive (Leaflet) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
 
   <!-- ============ DONNÉES STRUCTURÉES (JSON-LD) ============ -->
   <script type="application/ld+json">
@@ -90,78 +92,90 @@
         <a href="services.html">Prestations</a>
         <a href="realisations.html">Réalisations</a>
         <a href="conseils.html">Conseils</a>
+        <a href="zones-interventions.html" class="active" aria-current="page">Zones</a>
         <a href="contact.html" class="btn btn--primary nav__cta">Contact &amp; devis</a>
       </nav>
       <button class="nav__toggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <!-- ============ EN-TÊTE PAGE ============ -->
-  <section class="section section--soft" style="padding:60px 0 44px;">
+  <!-- ============ EN-TÊTE + CARTE ============ -->
+  <section class="section section--soft" style="padding:56px 0 52px;">
     <div class="container">
-      <div class="section__head" style="margin-bottom:0;">
-        <span class="eyebrow">Où nous intervenons</span>
-        <h1>Revêtement de sol à Brest et dans son agglomération</h1>
-        <p>Basés à Brest, nous posons vos sols souples — PVC, lames à clipser, salle de bain intégrale
-           et moquette — chez les particuliers comme chez les professionnels, dans tout le
-           Pays de Brest (29200 et communes voisines). Devis gratuit et déplacement sur toute la zone.</p>
+      <div class="zone-grid">
+        <div class="zone-intro reveal">
+          <span class="eyebrow">Où nous intervenons</span>
+          <h1>Revêtement de sol à Brest &amp; son agglomération</h1>
+          <p>Basés à Brest, nous nous déplaçons dans toute l'agglomération pour poser vos sols souples,
+             chez les particuliers comme chez les professionnels. Le déplacement pour établir votre
+             devis est <strong>gratuit et sans engagement</strong>.</p>
+          <div class="zone-badges">
+            <span>📍 Rayon d'environ 12 km autour de Brest</span>
+            <span>🧾 Devis gratuit sur place</span>
+            <span>🛡️ Chantier garanti — décennale 10 ans</span>
+          </div>
+          <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn--primary">Demander un devis gratuit</a>
+            <a href="tel:+33766195311" class="btn btn--ghost">📞 07 66 19 53 11</a>
+          </div>
+        </div>
+        <div class="map-wrap reveal">
+          <div id="map" role="application" aria-label="Carte de la zone d'intervention de D121 autour de Brest"></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ COMMUNES ============ -->
+  <!-- ============ COMMUNES DESSERVIES ============ -->
   <section class="section">
     <div class="container">
       <div class="section__head center reveal">
-        <span class="eyebrow">Nos secteurs</span>
-        <h2>Les communes où nous posons vos sols</h2>
-        <p>Vous ne voyez pas votre commune&nbsp;? Contactez-nous : nous intervenons aussi dans les alentours proches.</p>
+        <span class="eyebrow">Les communes desservies</span>
+        <h2>Nous intervenons notamment à…</h2>
+        <p>Brest et les communes de sa première couronne. Chaque secteur est accessible rapidement depuis notre base brestoise.</p>
       </div>
-      <div class="grid grid--3">
-        <article class="card reveal">
-          <h3>Brest (29200)</h3>
-          <p>Notre ville d'attache. Nous couvrons tous les quartiers — Saint-Marc, Lambézellec,
-             Bellevue, Saint-Pierre, Recouvrance, Europe — pour la rénovation de sols en logement
-             comme en local professionnel.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Bohars</h3>
-          <p>Pose de sols PVC et lames à clipser pour maisons et appartements à Bohars, aux portes de Brest.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Guilers</h3>
-          <p>Revêtements de sols souples et salles de bain étanches pour les particuliers de Guilers.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Gouesnou</h3>
-          <p>Sols PVC, moquette et rénovation sans démolition à Gouesnou et sa zone d'activités.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Guipavas</h3>
-          <p>Pose de revêtements souples chez les particuliers et les professionnels de Guipavas.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Plouzané</h3>
-          <p>Lames à clipser, sols PVC et salles de bain intégrales pour les logements de Plouzané.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Le Relecq-Kerhuon</h3>
-          <p>Rénovation de sols souples et pièces d'eau étanches au Relecq-Kerhuon, en bord de rade.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Plougastel-Daoulas</h3>
-          <p>Interventions en revêtement de sol à Plougastel-Daoulas, de la maison au local pro.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Et aux alentours</h3>
-          <p>Gouesnou, Le Conquet, Saint-Renan, Landerneau… Un projet en périphérie de Brest&nbsp;?
-             Parlons-en, le déplacement est souvent possible.</p>
-        </article>
-      </div>
+      <ul class="commune-grid reveal">
+        <li>
+          <h3>Brest <span class="cp">29200</span></h3>
+          <p>Notre ville d'attache — tous les quartiers, de Saint-Marc à Recouvrance en passant par Lambézellec et Bellevue.</p>
+        </li>
+        <li>
+          <h3>Bohars <span class="cp">29820</span></h3>
+          <p>Commune résidentielle à la lisière nord-ouest de Brest.</p>
+        </li>
+        <li>
+          <h3>Guilers <span class="cp">29820</span></h3>
+          <p>Aux portes de Brest, entre bourg et quartiers pavillonnaires.</p>
+        </li>
+        <li>
+          <h3>Gouesnou <span class="cp">29850</span></h3>
+          <p>Au nord de Brest, à proximité de la zone d'activités de Kergaradec.</p>
+        </li>
+        <li>
+          <h3>Guipavas <span class="cp">29490</span></h3>
+          <p>À l'est de l'agglomération, autour de l'aéroport Brest-Bretagne.</p>
+        </li>
+        <li>
+          <h3>Plouzané <span class="cp">29280</span></h3>
+          <p>À l'ouest, vers le Technopôle Brest-Iroise et la pointe du Finistère.</p>
+        </li>
+        <li>
+          <h3>Le Relecq-Kerhuon <span class="cp">29480</span></h3>
+          <p>En bord de rade, entre Brest et l'estuaire de l'Élorn.</p>
+        </li>
+        <li>
+          <h3>Plougastel-Daoulas <span class="cp">29470</span></h3>
+          <p>Sur la presqu'île de Plougastel, de l'autre côté du pont de l'Élorn.</p>
+        </li>
+      </ul>
+      <p style="margin-top:28px; text-align:center; color:var(--muted);">
+        Votre commune n'apparaît pas&nbsp;? Nous intervenons aussi un peu plus loin (Saint-Renan,
+        Le Conquet, Landerneau…). <a href="contact.html" style="color:var(--terracotta); font-weight:600;">Contactez-nous</a>, le déplacement est souvent possible.
+      </p>
     </div>
   </section>
 
-  <!-- ============ POURQUOI LOCAL ============ -->
+  <!-- ============ AVANTAGE LOCAL ============ -->
   <section class="section section--soft">
     <div class="container split">
       <div class="reveal">
@@ -169,8 +183,8 @@
         <h2>L'avantage d'un poseur local à Brest</h2>
         <p style="margin-top:14px;">
           Faire appel à une entreprise implantée à Brest, c'est l'assurance d'un déplacement rapide,
-          d'un devis fait sur place et d'un interlocuteur unique du premier contact à la livraison
-          du chantier. Nous connaissons le bâti local, des immeubles anciens de Recouvrance aux
+          d'un devis fait sur place et d'un interlocuteur unique du premier contact à la livraison du
+          chantier. Nous connaissons le bâti local, des immeubles anciens de Recouvrance aux
           constructions récentes de l'agglomération.
         </p>
         <ul class="checklist">
@@ -191,7 +205,10 @@
             Assurance décennale — chantier garanti 10 ans
           </li>
         </ul>
-        <a href="services.html" class="btn btn--ghost" style="margin-top:26px;">Voir nos prestations</a>
+        <div style="margin-top:26px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="services.html" class="btn btn--ghost">Voir nos prestations</a>
+          <a href="realisations.html" class="btn btn--ghost">Nos réalisations</a>
+        </div>
       </div>
       <div class="split__media reveal">
         <img loading="lazy" decoding="async" src="assets/photos/about.jpg" alt="Intérieur moderne avec sol posé par D121 à Brest" />
@@ -252,6 +269,7 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="js/main.js"></script>
 </body>
 </html>
