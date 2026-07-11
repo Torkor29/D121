@@ -47,6 +47,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Préchargement de l'image principale (améliore le LCP) -->
+  <link rel="preload" as="image" href="assets/hero.jpg" fetchpriority="high" />
 
   <!-- ============ DONNÉES STRUCTURÉES (JSON-LD) ============ -->
   <script type="application/ld+json">
@@ -158,7 +160,7 @@
     <div class="container">
       <div class="hero__inner">
         <span class="hero__zone">📍 Brest &amp; agglomération (29200)</span>
-        <h1>Vos sols souples posés avec soin et précision</h1>
+        <h1>Revêtement de sol souple à Brest, posé avec soin et précision</h1>
         <p class="hero__lead">
           D121 est votre entrepreneur spécialisé en revêtements de sols souples à Brest.
           Rouleaux PVC, moquette, lames à clipser, salle de bain intégrale&nbsp;: une pose
